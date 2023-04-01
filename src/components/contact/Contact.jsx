@@ -1,9 +1,8 @@
 import React from "react";
-import Header from "../header/Header";
 
 const Contact = () => {
   return (
-    <div>
+    <div className="container bg-slate-600 text-white text-8xl mt-12 text-center">
       <h1>Contact</h1>
     </div>
   );
