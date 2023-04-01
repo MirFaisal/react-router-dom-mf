@@ -3,19 +3,31 @@ import "./App.css";
 import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
 import Home from "./components/home/Home";
+import Layout from "./layout/Layout";
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/about",
-      element: <About />,
-    },
-    {
-      path: "/contact",
-      element: <Contact />,
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/home",
+          element: <Home />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+      ],
+      errorElement: <h2>ERROR</h2>,
     },
   ]);
   return (
